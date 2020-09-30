@@ -1,6 +1,6 @@
 ---
 title: "Github 블로그 시작"
-date: 2020-09-30 13:15:00 -0400
+date: 2020-09-30 13:15:00 +0900
 categories: 잡담
 toc: true
 toc_sticky: true
