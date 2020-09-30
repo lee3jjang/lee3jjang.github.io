@@ -2,6 +2,8 @@
 title: "Github 블로그 시작"
 date: 2020-09-30 13:15:00 -0400
 categories: 잡담
+toc: true
+toc_sticky: true
 ---
 
 여기다가 쓰고 싶은 말을 쓰면 되는 것 같다. 블로그 화이팅!
