@@ -12,6 +12,7 @@ Kotlin을 연습하는 공간입니다. Kotlin은 안드로이드 앱 개발에 
 ## 컨텐츠
 * Kotlin 문서화 연습
 * Markdown 연습
+* 블로그 연습
 * 안드로이드 앱 개발 연습
 * Kotlin의 문법들을 연습
 * Java로 구현 ESG 프로그램 Kotlin으로 이식
