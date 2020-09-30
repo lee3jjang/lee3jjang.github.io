@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "김나맥"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/bio-photo.jpg"
   bio              : "저는 **리스크관리자**입니다."
   location         : "서울시 관악구 신대방 어딘가"
   email            :
