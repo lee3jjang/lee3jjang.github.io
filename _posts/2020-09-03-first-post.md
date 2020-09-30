@@ -23,3 +23,4 @@ Kotlin을 연습하는 공간입니다. Kotlin은 안드로이드 앱 개발에 
 
 ## 참고자료
 * Kotlin 설치 및 개발환경 설정은 여기 [블로그](https://webnautes.tistory.com/1148)를 참조하였습니다.
+* 블로그 꾸미기는 여기 [블로그](https://hahafamilia.github.io/howto/jekyll-github-mistakes-blog/) 및 여기 [블로그](https://dreamgonfly.github.io/blog/jekyll-remote-theme/)를 참고했습니다.
