@@ -1,4 +1,8 @@
 # main links
 main:
-  - title: "잡담"
-    url: /talk/
+  - title: "Categories"
+    url: /categories/
+  - title: "Categories"
+    url: /categories/
+  - title: "Posts"
+    url: /year-archive/
