@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroicons/react": "^2.1.5",
     "@vercel/postgres": "^0.10.0",
+    "lowdb": "^7.0.1",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18"

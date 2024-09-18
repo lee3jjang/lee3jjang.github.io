@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## TODO
+
+- [ ] CRUD 완성하기
+- [ ] 실제로 글쓰기
+- [ ] DB 연결하기
+
 ## Getting Started
 
 First, run the development server:
