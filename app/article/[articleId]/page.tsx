@@ -1,4 +1,5 @@
-import { TArticle } from "@/app/types/article";
+import { Separator } from "@/components/ui/separator";
+import { TArticle } from "@/types/article";
 
 type Props = {
   params: {
@@ -8,17 +9,17 @@ type Props = {
 
 export default async function ArticlePage({ params: { articleId } }: Props) {
   const response = await fetch(
-    `http://localhost:3000/api/article/${articleId}`
+    `http://localhost:3001/api/article/${articleId}`
   );
   const article = (await response.json()) as TArticle;
 
   return (
-    <article>
+    <div>
       <h1>
         <b>{article.title}</b>
       </h1>
-      <hr />
+      <Separator />
       <p>{article.content}</p>
-    </article>
+    </div>
   );
 }

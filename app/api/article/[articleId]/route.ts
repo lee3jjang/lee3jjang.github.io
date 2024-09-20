@@ -1,4 +1,4 @@
-import db from "@/app/lib/db/db.json";
+import db from "@/lib/db/db.json";
 
 export async function GET(
   request: Request,

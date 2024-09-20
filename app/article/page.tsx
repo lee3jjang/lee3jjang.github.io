@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { TArticle } from "@/app/types/article";
+import { TArticle } from "@/types/article";
 
 export default async function ArticleListPage() {
-  const response = await fetch("http://localhost:3000/api/article");
+  const response = await fetch("http://localhost:3001/api/article");
   const articles = (await response.json()) as TArticle[];
 
   return (

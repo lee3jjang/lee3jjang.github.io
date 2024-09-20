@@ -1,4 +1,4 @@
-import db from "@/app/lib/db/db.json";
+import db from "@/lib/db/db.json";
 
 // Note: https://nextjs.org/docs/app/building-your-application/routing/route-handlers
 
