@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lee3jjang</title>
+  <meta name="description" content="lee3jjang의 개인 홈페이지">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👋</text></svg>">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#">lee3jjang</a>
+    <nav>
+      <a href="#about">소개</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#contact">연락처</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">◐</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">안녕하세요 👋</p>
+      <h1>저는 <span class="accent">lee3jjang</span>입니다.</h1>  <!-- TODO: 이름으로 바꿔주세요 -->
+      <p class="lead">
+        <!-- TODO: 한 줄 소개를 자유롭게 바꿔주세요 -->
+        데이터와 코드로 문제를 푸는 걸 좋아합니다.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="#contact">연락하기</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>소개</h2>
+      <p>
+        <!-- TODO: 자기소개를 작성해주세요 -->
+        여기에 간단한 자기소개를 적어주세요. 어떤 일을 하고 있는지, 관심사는 무엇인지,
+        요즘 무엇을 배우고 있는지 등을 쓰면 좋습니다.
+      </p>
+      <ul class="tags">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>Data</li>
+        <li>Web</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>프로젝트</h2>
+      <div class="grid">
+        <!-- TODO: 프로젝트 카드를 추가/수정하세요 -->
+        <a class="card" href="https://github.com/lee3jjang/lee3jjang.github.io" target="_blank" rel="noopener">
+          <h3>lee3jjang.github.io</h3>
+          <p>지금 보고 계신 개인 홈페이지입니다. HTML과 CSS만으로 만들었습니다.</p>
+          <span class="meta">HTML · CSS</span>
+        </a>
+        <div class="card">
+          <h3>프로젝트 이름</h3>
+          <p>프로젝트에 대한 짧은 설명을 적어주세요.</p>
+          <span class="meta">사용 기술</span>
+        </div>
+        <div class="card">
+          <h3>프로젝트 이름</h3>
+          <p>프로젝트에 대한 짧은 설명을 적어주세요.</p>
+          <span class="meta">사용 기술</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>연락처</h2>
+      <p>편하게 연락 주세요.</p>
+      <ul class="links">
+        <li><a href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub · @lee3jjang</a></li>
+        <!-- TODO: 공개해도 되는 연락처만 추가하세요 -->
+        <!-- <li><a href="mailto:you@example.com">Email · you@example.com</a></li> -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> lee3jjang</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved) root.dataset.theme = saved;
+    } catch (e) {}
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const dark = root.dataset.theme
+        ? root.dataset.theme === 'dark'
+        : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+    });
+  </script>
+</body>
+</html>
