@@ -231,3 +231,29 @@ footer {
 @media (max-width: 560px) {
   .activity-list li { grid-template-columns: 1fr; gap: 2px; }
 }
+
+/* --- Detail (career) pages --- */
+.page-hero { padding: 72px 0 48px; }
+.page-hero .lead { margin-bottom: 16px; }
+.inline-link { color: var(--accent); }
+.inline-link:hover { text-decoration: underline; }
+#company .stats { padding: 8px 0 0; }
+.more { display: inline-block; margin-top: 6px; color: var(--accent); font-size: 14px; font-weight: 500; }
+.more:hover { text-decoration: underline; }
+
+.case {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.case header .meta { display: block; margin-bottom: 4px; }
+.case h3 { font-size: 20px; margin-bottom: 16px; }
+.case-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.case h4 { font-size: 14px; color: var(--accent); margin: 0 0 4px; }
+.case p { margin: 0; color: var(--muted); font-size: 15px; }
+
+@media (max-width: 720px) {
+  .case-body { grid-template-columns: 1fr; gap: 14px; }
+}

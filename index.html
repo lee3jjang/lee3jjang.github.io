@@ -101,8 +101,9 @@
         <li>
           <span class="period">20XX – 현재</span>
           <div>
-            <h3>[회사명] · [직책]</h3>
-            <p>[맡은 일과 대표 성과. 가능하면 숫자로]</p>
+            <h3>코드박스 (ZUZU) · [직책]</h3>
+            <p>[맡은 일과 대표 성과 한 줄]</p>
+            <a class="more" href="kodebox.html">자세히 보기 →</a>
           </div>
         </li>
         <li>
@@ -174,20 +175,6 @@
     <p>© <span id="year"></span> lee3jjang</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const root = document.documentElement;
-    try {
-      const saved = localStorage.getItem('theme');
-      if (saved) root.dataset.theme = saved;
-    } catch (e) {}
-    document.getElementById('themeToggle').addEventListener('click', () => {
-      const dark = root.dataset.theme
-        ? root.dataset.theme === 'dark'
-        : matchMedia('(prefers-color-scheme: dark)').matches;
-      root.dataset.theme = dark ? 'light' : 'dark';
-      try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
