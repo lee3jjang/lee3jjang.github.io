@@ -281,3 +281,9 @@ footer {
 @media (max-width: 560px) {
   .item-list li { grid-template-columns: 1fr; gap: 2px; }
 }
+
+.case .team {
+  display: inline-block; margin: 2px 0 8px;
+  background: var(--accent-soft); color: var(--accent);
+  border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 500;
+}
