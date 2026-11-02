@@ -1,0 +1,10 @@
+# GitHub Pages(Jekyll) 설정. 기존 HTML 페이지는 그대로 복사되고, _posts의 글만 페이지로 만들어집니다.
+title: 이상진
+lang: ko
+url: https://lee3jjang.github.io
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md
