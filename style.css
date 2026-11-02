@@ -270,3 +270,14 @@ footer {
 }
 .service-stat { margin-top: 16px !important; padding-top: 12px; border-top: 1px dashed var(--border); font-size: 13px !important; }
 .case { scroll-margin-top: 80px; }
+
+.item-list { list-style: none; padding: 0; margin: 0; }
+.item-list li {
+  display: grid; grid-template-columns: 160px 1fr; gap: 16px;
+  padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 15px;
+}
+.item-list li:last-child { border-bottom: none; }
+.item-list span { color: var(--muted); }
+@media (max-width: 560px) {
+  .item-list li { grid-template-columns: 1fr; gap: 2px; }
+}
