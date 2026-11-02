@@ -3,8 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>lee3jjang</title>
-  <meta name="description" content="lee3jjang의 개인 홈페이지">
+  <!-- TODO: 이름과 한 줄 소개로 바꿔주세요. 검색 결과와 링크 공유 미리보기에 나옵니다. -->
+  <title>lee3jjang | 소개</title>
+  <meta name="description" content="[한 줄 소개] — lee3jjang의 프로필, 경력, 프로젝트">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://lee3jjang.github.io/">
+  <meta property="og:title" content="lee3jjang | 소개">
+  <meta property="og:description" content="[한 줄 소개] — 프로필, 경력, 프로젝트">
+  <!-- 공유 미리보기 이미지: 1200x630 이미지를 og.png로 올리면 적용됩니다 -->
+  <meta property="og:image" content="https://lee3jjang.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,72 +23,122 @@
   <header class="nav">
     <a class="logo" href="#">lee3jjang</a>
     <nav>
-      <a href="#about">소개</a>
-      <a href="#projects">프로젝트</a>
+      <a href="#strengths">강점</a>
+      <a href="#career">경력</a>
+      <a href="#projects">성과</a>
       <a href="#contact">연락처</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">◐</button>
   </header>
 
   <main>
+    <!-- 첫 화면: 3초 안에 "누구이고, 무엇을 잘하는지" 보이게 -->
     <section class="hero">
-      <p class="eyebrow">안녕하세요 👋</p>
-      <h1>저는 <span class="accent">lee3jjang</span>입니다.</h1>  <!-- TODO: 이름으로 바꿔주세요 -->
-      <p class="lead">
-        <!-- TODO: 한 줄 소개를 자유롭게 바꿔주세요 -->
-        데이터와 코드로 문제를 푸는 걸 좋아합니다.
-      </p>
-      <div class="cta">
-        <a class="btn primary" href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="#contact">연락하기</a>
+      <div class="hero-text">
+        <p class="eyebrow">[직무 / 회사]</p>
+        <h1><span class="accent">[이름]</span><br>[나를 한 문장으로 표현하는 문구]</h1>
+        <p class="lead">
+          [2~3줄 소개: 어떤 문제를 풀어왔고, 어떤 가치를 만드는 사람인지]
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">연락하기</a>
+          <a class="btn" href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub</a>
+          <!-- <a class="btn" href="https://www.linkedin.com/in/아이디" target="_blank" rel="noopener">LinkedIn</a> -->
+          <!-- <a class="btn" href="resume.pdf" target="_blank">이력서 PDF</a> -->
+        </div>
       </div>
+      <!-- 프로필 사진: profile.jpg를 올리고 아래 div를 <img class="avatar" src="profile.jpg" alt="프로필 사진">로 바꾸세요 -->
+      <div class="avatar placeholder" aria-hidden="true">🙂</div>
     </section>
 
-    <section id="about">
-      <h2>소개</h2>
-      <p>
-        <!-- TODO: 자기소개를 작성해주세요 -->
-        여기에 간단한 자기소개를 적어주세요. 어떤 일을 하고 있는지, 관심사는 무엇인지,
-        요즘 무엇을 배우고 있는지 등을 쓰면 좋습니다.
-      </p>
+    <!-- 숫자로 보여주는 한눈 요약 -->
+    <section class="stats">
+      <div><strong>[N]년</strong><span>경력</span></div>
+      <div><strong>[N]+</strong><span>프로젝트</span></div>
+      <div><strong>[N]%</strong><span>[대표 성과 지표]</span></div>
+      <div><strong>[N]</strong><span>[수상 / 발표 / 자격증 등]</span></div>
+    </section>
+
+    <section id="strengths">
+      <h2>이런 걸 잘합니다</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>[강점 1]</h3>
+          <p>[구체적인 근거나 사례 한두 문장]</p>
+        </div>
+        <div class="card">
+          <h3>[강점 2]</h3>
+          <p>[구체적인 근거나 사례 한두 문장]</p>
+        </div>
+        <div class="card">
+          <h3>[강점 3]</h3>
+          <p>[구체적인 근거나 사례 한두 문장]</p>
+        </div>
+      </div>
       <ul class="tags">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>Data</li>
-        <li>Web</li>
+        <li>[기술/도구]</li>
+        <li>[기술/도구]</li>
+        <li>[기술/도구]</li>
+        <li>[기술/도구]</li>
       </ul>
+    </section>
+
+    <section id="career">
+      <h2>경력</h2>
+      <ol class="timeline">
+        <li>
+          <span class="period">20XX – 현재</span>
+          <div>
+            <h3>[회사명] · [직책]</h3>
+            <p>[맡은 일과 대표 성과. 가능하면 숫자로]</p>
+          </div>
+        </li>
+        <li>
+          <span class="period">20XX – 20XX</span>
+          <div>
+            <h3>[회사명] · [직책]</h3>
+            <p>[맡은 일과 대표 성과]</p>
+          </div>
+        </li>
+        <li>
+          <span class="period">20XX</span>
+          <div>
+            <h3>[학교 / 학위]</h3>
+            <p>[전공 등]</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <section id="projects">
-      <h2>프로젝트</h2>
+      <h2>주요 성과</h2>
       <div class="grid">
-        <!-- TODO: 프로젝트 카드를 추가/수정하세요 -->
-        <a class="card" href="https://github.com/lee3jjang/lee3jjang.github.io" target="_blank" rel="noopener">
-          <h3>lee3jjang.github.io</h3>
-          <p>지금 보고 계신 개인 홈페이지입니다. HTML과 CSS만으로 만들었습니다.</p>
-          <span class="meta">HTML · CSS</span>
-        </a>
         <div class="card">
-          <h3>프로젝트 이름</h3>
-          <p>프로젝트에 대한 짧은 설명을 적어주세요.</p>
-          <span class="meta">사용 기술</span>
+          <span class="meta">[연도] · [역할]</span>
+          <h3>[프로젝트명]</h3>
+          <p>[문제 → 내가 한 일 → 결과]</p>
         </div>
         <div class="card">
-          <h3>프로젝트 이름</h3>
-          <p>프로젝트에 대한 짧은 설명을 적어주세요.</p>
-          <span class="meta">사용 기술</span>
+          <span class="meta">[연도] · [역할]</span>
+          <h3>[프로젝트명]</h3>
+          <p>[문제 → 내가 한 일 → 결과]</p>
+        </div>
+        <div class="card">
+          <span class="meta">[연도] · [역할]</span>
+          <h3>[프로젝트명]</h3>
+          <p>[문제 → 내가 한 일 → 결과]</p>
         </div>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>연락처</h2>
-      <p>편하게 연락 주세요.</p>
-      <ul class="links">
-        <li><a href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub · @lee3jjang</a></li>
-        <!-- TODO: 공개해도 되는 연락처만 추가하세요 -->
-        <!-- <li><a href="mailto:you@example.com">Email · you@example.com</a></li> -->
-      </ul>
+    <section id="contact" class="contact">
+      <h2>함께 이야기해요</h2>
+      <p>[어떤 제안을 환영하는지: 협업, 채용, 강연, 커피챗 등]</p>
+      <div class="cta">
+        <!-- TODO: 공개해도 되는 이메일로 바꿔주세요 -->
+        <a class="btn primary" href="mailto:[이메일]">이메일 보내기</a>
+        <a class="btn" href="https://github.com/lee3jjang" target="_blank" rel="noopener">GitHub · @lee3jjang</a>
+      </div>
     </section>
   </main>
 
