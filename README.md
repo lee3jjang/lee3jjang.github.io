@@ -5,5 +5,6 @@
 - 주소: https://lee3jjang.github.io
 - `index.html`: 메인 프로필
 - `kodebox.html`: 코드박스(ZUZU) 경력 상세
+- `dbinsurance.html`: DB손해보험 경력 상세
 - 아직 채울 내용은 HTML 안에 `TODO` 주석으로 남겨 두었습니다.
 - 로컬 미리보기: `python3 -m http.server` 실행 후 http://localhost:8000 접속
