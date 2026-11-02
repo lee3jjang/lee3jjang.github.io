@@ -295,3 +295,14 @@ footer {
   background: var(--accent-soft); color: var(--accent);
   border-radius: 6px; padding: 1px 8px; font-size: 12px; font-weight: 500;
 }
+
+.two-col { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.sub-list { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+.sub-list li { margin: 4px 0; }
+.activity-list li > span:last-child:not(.period) { color: var(--text); }
+.contact-email { margin-top: 16px !important; font-size: 14px; }
+@media (max-width: 560px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+.timeline .sub-list li { display: list-item; padding: 0; margin: 4px 0; }
+.timeline .sub-list li::before { content: none; }
