@@ -208,3 +208,26 @@ footer {
 @media (max-width: 560px) {
   .nav nav a { font-size: 14px; }
 }
+
+/* --- Now / activities / contact reasons --- */
+.section-lead { font-size: 17px; margin: 0 0 20px; max-width: 680px; }
+.checklist { list-style: none; padding: 0; margin: 0; }
+.checklist li { position: relative; padding-left: 28px; margin: 10px 0; }
+.checklist li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.updated { color: var(--muted); font-size: 13px; margin: 20px 0 0; }
+
+.activity-list { list-style: none; padding: 0; margin: 0; }
+.activity-list li {
+  display: grid; grid-template-columns: 100px 1fr; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.activity-list .period { color: var(--muted); font-size: 14px; }
+.activity-list a:hover { color: var(--accent); }
+
+.reasons { text-align: left; margin-bottom: 32px; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.reasons .card:hover { transform: none; border-color: var(--border); }
+.reasons p { margin: 0; }
+
+@media (max-width: 560px) {
+  .activity-list li { grid-template-columns: 1fr; gap: 2px; }
+}
