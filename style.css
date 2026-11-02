@@ -8,13 +8,21 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0d1117;
     --text: #e6edf3;
     --muted: #8d96a0;
     --border: #30363d;
     --link: #4493f8;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1117;
+  --text: #e6edf3;
+  --muted: #8d96a0;
+  --border: #30363d;
+  --link: #4493f8;
 }
 
 * { box-sizing: border-box; }
