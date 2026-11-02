@@ -257,3 +257,16 @@ footer {
 @media (max-width: 720px) {
   .case-body { grid-template-columns: 1fr; gap: 14px; }
 }
+
+.case-summary { margin: 0 0 16px !important; color: var(--text) !important; font-size: 16px !important; }
+.case h3 { margin-bottom: 8px; }
+.features { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 20px; }
+.features li {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.service-stat { margin-top: 16px !important; padding-top: 12px; border-top: 1px dashed var(--border); font-size: 13px !important; }
+.case { scroll-margin-top: 80px; }
