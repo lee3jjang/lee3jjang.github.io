@@ -1,127 +1,128 @@
-/* Oat 디자인 시스템(https://lee3jjang.github.io/design-system/)을 따른다.
-   한 단짜리 문서를 귀리색 작업대 위에 놓인 두꺼운 종이판(slab)으로 만든다. Oat처럼 밝은 테마 하나만 쓴다. */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+/* Tratteggio 디자인 시스템(https://lee3jjang.github.io/design-system/tratteggio/)을 따른다.
+   해칭과 펜선. 세이지 종이 위에 한 단짜리 문서를 펜으로 긋는다.
+   흐림, 그라데이션, 그림자 효과는 쓰지 않는다. 선은 바늘처럼 가늘게 들어가 굵어졌다가 빠지고,
+   그늘은 해칭으로 긋고 빛 쪽으로 사그라진다. Tratteggio처럼 밝은 테마 하나만 쓴다. */
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bodoni+Moda:ital,opsz,wght@1,6..96,600;1,6..96,800&family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 :root {
   color-scheme: light;
-  --background: #f3f1e7;
-  --foreground: #17221a;
-  --card: #fdfcf6;
-  --panel: #e9e7d8;
-  --panel-deep: #dcdac9;
-  --primary: #2f5a3c;
-  --primary-soft: #e3ece2;
-  --cap: #fdfcf6;
-  --cap-wall: #b9b8a5;
-  --slab-edge: #a9a892;
-  --subtle-foreground: #36443a;
-  --muted-foreground: #5c6a5f;
-  --tint: #e8b45a;
-  --tint-glow: rgba(232, 180, 90, .55);
-  --border: #d3d3c0;
-  --ring: #17221a;
-  --radius: 8px;
-  --radius-xl: 14px;
-  --shadow-inset: inset 1.5px 3px 0 rgba(23, 34, 26, .18);
-  --font-sans: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --paper: #e4e3d1;
+  --paper-2: #d6d7c0;
+  --skin: #efab8f;
+  --terra-d: #8a3a2c;
+  --mauve: #ab92ad;
+  --plum: #9b3a58;
+  --plum-d: #64203a;
+  --ice: #bcd6e2;
+  --cream: #fff6e8;
+  --ink: #17120f;
+  --ink-2: #463631;
+  --f-disp: "Black Han Sans", "Noto Sans KR", sans-serif;
+  --f-lat: "Bodoni Moda", "Didot", "Noto Sans KR", serif;
+  --f-body: "Noto Sans KR", system-ui, sans-serif;
+  /* 바늘 획: 가늘게 들어가 굵어졌다가 날카롭게 빠진다 */
+  --needle: polygon(0 50%, 20% 10%, 70% 0, 100% 40%, 85% 80%, 30% 100%);
+  /* 한 겹 해칭 */
+  --hatch: repeating-linear-gradient(-55deg, var(--ink) 0 1.5px, transparent 1.5px 6px);
 }
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font: 400 17px/1.75 var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.8 var(--f-body);
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
-  padding: 40px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px));
 }
 
-/* 종이판: 오른쪽 아래로 3px 옆면이 보이는 얇은 판 */
 main {
-  max-width: 760px;
+  max-width: 740px;
   margin: 0 auto;
-  padding: 48px clamp(20px, 6vw, 56px) 40px;
-  background: var(--card);
-  border: 1.5px solid var(--slab-edge);
-  border-radius: var(--radius-xl);
-  box-shadow:
-    .9px 1.5px 0 -1.5px var(--cap-wall), 1.8px 3px 0 -1.5px var(--cap-wall),
-    .9px 1.5px 0 0 var(--slab-edge), 1.8px 3px 0 0 var(--slab-edge),
-    6px 10px 14px -10px rgba(23, 34, 26, .2);
+  padding-block: 56px 72px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
 }
 
-h1, h2, h3 { text-wrap: balance; }
-h1 { font: 900 clamp(40px, 8vw, 64px)/1.05 var(--font-sans); letter-spacing: -.04em; margin: 0 0 12px; }
-h2 { font: 900 26px/1.3 var(--font-sans); letter-spacing: -.02em; margin: 56px 0 16px; display: flex; align-items: center; gap: 12px; }
-/* 램프: 섹션마다 호박색 불이 하나 */
-h2::before {
+h1, h2, h3 { font-weight: 400; text-wrap: balance; }
+
+h1 { position: relative; margin: 0 0 30px; padding-bottom: 22px; font: 400 clamp(54px, 11vw, 96px)/1 var(--f-disp); letter-spacing: -.01em; }
+/* 이름 아래로 긴 펜 획 하나 */
+h1::after { content: ""; position: absolute; left: 0; bottom: 0; width: min(100%, 360px); height: 10px; background: var(--ink); clip-path: var(--needle); }
+
+h2 { position: relative; margin: 64px 0 20px; padding-bottom: 14px; font: 400 clamp(28px, 4.4vw, 36px)/1.15 var(--f-disp); }
+/* 제목 아래 해칭: 왼쪽 윤곽에서 시작해 빛 쪽(오른쪽)으로 사그라진다 */
+h2::after {
   content: "";
-  flex: none;
-  width: 12px; height: 12px;
-  border: 1.5px solid var(--foreground);
-  border-radius: 50%;
-  background: var(--tint);
-  box-shadow: 0 0 0 3px var(--tint-glow), 0 0 10px 1px var(--tint-glow);
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 9px;
+  background: var(--hatch);
+  -webkit-mask-image: linear-gradient(90deg, #000 0 35%, transparent 90%);
+  mask-image: linear-gradient(90deg, #000 0 35%, transparent 90%);
 }
-h3 { font: 700 19px/1.4 var(--font-sans); margin: 32px 0 6px; }
+
+h3 { margin: 36px 0 6px; font: 400 22px/1.3 var(--f-disp); }
 
 p { margin: 0 0 16px; }
-ul { margin: 0 0 16px; padding-left: 1.3em; }
-li { margin: 6px 0; }
-li::marker { color: var(--muted-foreground); }
 strong { font-weight: 700; }
 
-a {
-  color: var(--primary);
-  font-weight: 500;
-  text-decoration: underline;
-  text-decoration-color: var(--primary-soft);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+/* 목록 표시는 자두빛 별 조각 */
+ul { margin: 0 0 18px; padding: 0; list-style: none; }
+li { position: relative; margin: 8px 0; padding-left: 26px; }
+li::before {
+  content: "";
+  position: absolute;
+  left: 1px; top: .52em;
+  width: 13px; height: 13px;
+  background: var(--plum-d);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
 }
-a:hover { text-decoration-color: var(--tint); }
-:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; border-radius: 4px; }
 
-/* 파인 홈 */
-hr { height: 6px; border: 0; border-radius: 3px; background: var(--panel); box-shadow: var(--shadow-inset); margin: 48px 0 24px; }
+a { color: var(--plum-d); font-weight: 500; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+a:hover { color: var(--ink); text-decoration-color: var(--plum); text-decoration-thickness: 3px; }
+:focus { outline: none; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 7px var(--ice); }
 
-.subtitle { font-size: 19px; font-weight: 500; color: var(--subtle-foreground); margin-bottom: 24px; }
-.meta { color: var(--muted-foreground); font-size: 15px; margin: 0 0 8px; font-variant-numeric: tabular-nums; }
+/* 장면 구분: 바늘 획 */
+hr { height: 8px; margin: 52px 0 28px; border: 0; background: var(--ink); clip-path: var(--needle); }
 
-/* 돌아가기: 옆면이 있는 작은 키캡. 누르면 위에서 눌려 내려간다. */
-.back { margin: 0 0 36px; }
+.subtitle { margin-bottom: 26px; font: 400 clamp(22px, 3vw, 27px)/1.35 var(--f-disp); color: var(--terra-d); }
+.meta { margin: 0 0 8px; color: var(--terra-d); font: italic 600 17px/1.6 var(--f-lat); font-variant-numeric: tabular-nums; }
+
+/* 돌아가기: 기울어진 크림색 칩. 누르면 먹으로 뒤집힌다. */
+.back { margin: 0 0 40px; }
 .back a {
-  --wall: 4px;
-  display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px;
-  border: 1.5px solid var(--foreground); border-radius: var(--radius);
-  background: var(--cap); color: var(--foreground);
-  font: 700 15px/1 var(--font-sans); text-decoration: none;
-  box-shadow:
-    calc(var(--wall) * .3) calc(var(--wall) * .5) 0 -1.5px var(--cap-wall), calc(var(--wall) * .6) var(--wall) 0 -1.5px var(--cap-wall),
-    calc(var(--wall) * .3) calc(var(--wall) * .5) 0 0 var(--foreground), calc(var(--wall) * .6) var(--wall) 0 0 var(--foreground);
-  transition: transform .34s cubic-bezier(.3, 1.9, .45, 1), box-shadow .34s cubic-bezier(.3, 1.9, .45, 1);
+  position: relative;
+  display: inline-flex; align-items: center; min-height: 44px; padding: 6px 22px 6px 20px;
+  background: var(--cream); color: var(--ink);
+  font: 500 16px/1.2 var(--f-body); text-decoration: none;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 }
-.back a:active { --wall: 0px; transform: translate(2.4px, 4px); transition-duration: .05s; }
+.back a::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--ink);
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%, 0 calc(100% - 2px), calc(100% - 11.5px) calc(100% - 2px), calc(100% - 3px) 2px, 11px 2px, 1.6px calc(100% - 2px), 0 calc(100% - 2px));
+  pointer-events: none;
+}
+.back a:hover { color: var(--ink); background: var(--skin); }
+.back a:active { background: var(--ink); color: var(--cream); }
+.back a:focus-visible { outline: 3px solid var(--plum); outline-offset: -6px; box-shadow: none; }
 
-footer { color: var(--muted-foreground); font-size: 14px; }
-footer a { font-weight: 400; }
+footer { position: relative; padding-top: 22px; color: var(--ink-2); font-size: 15px; }
 
 /* 블로그 글 본문 (마크다운) */
-blockquote { margin: 0 0 16px; padding: 4px 16px; color: var(--subtle-foreground); background: var(--panel); border-radius: var(--radius); box-shadow: var(--shadow-inset); }
-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: var(--panel); padding: 1px 6px; border-radius: 5px; }
-pre { overflow-x: auto; padding: 16px; border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow-inset); line-height: 1.5; margin: 0 0 16px; }
+blockquote { margin: 0 0 16px; padding: 12px 20px; color: var(--ink-2); background: var(--cream); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
+blockquote p:last-child { margin-bottom: 0; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: var(--paper-2); padding: 1px 6px; }
+pre { overflow-x: auto; padding: 16px 20px; margin: 0 0 16px; background: var(--cream); line-height: 1.5; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); }
 pre code { background: none; padding: 0; }
 table { border-collapse: collapse; margin: 0 0 16px; display: block; overflow-x: auto; }
-th, td { border: 1.5px solid var(--border); padding: 6px 12px; }
-th { background: var(--panel); }
+th, td { border: 1.5px solid var(--ink); padding: 6px 12px; }
+th { background: var(--skin); font: 400 17px/1.4 var(--f-disp); }
 img { max-width: 100%; height: auto; }
-.post-list { list-style: none; padding: 0; }
-.post-list li { margin: 10px 0; }
-.post-list .meta { display: inline-block; min-width: 6.5em; margin: 0; }
-
-@media (prefers-reduced-motion: reduce) {
-  .back a { transition: none; }
-}
+.post-list li { margin: 12px 0; }
+.post-list .meta { display: inline-block; min-width: 6.5em; margin: 0; font-size: 16px; }
